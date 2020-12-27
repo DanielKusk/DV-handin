@@ -19,4 +19,9 @@
 ## Infected by municipality
 
 - Bar (by region)
-- Mappy
+- Map
+
+## Deaths
+
+- Line chart (per day)
+- Line chart (accumulated)
