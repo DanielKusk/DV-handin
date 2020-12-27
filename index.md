@@ -23,5 +23,5 @@
 
 ## Deaths
 
-- Line chart (per day)
-- Line chart (accumulated)
+- [Line chart (per day)](Visualisations/deaths_line_plot.html)
+- [Line chart (accumulated)](Visualisations/cumulated_deaths_line_plot.html)
