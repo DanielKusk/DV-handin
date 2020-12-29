@@ -1,15 +1,20 @@
 # Visualisation of COVID-19 infections
 
-### Data source: [Statens Serum Institut](https://covid19.ssi.dk/overvagningsdata). Data last updated 26 December 2020.
+### Data source: [Statens Serum Institut](https://covid19.ssi.dk/overvagningsdata). Data last updated 29 December 2020.
 
 ## New infections per day
 
 - Line chart
 - Bar chart
 
+## Positivity percentage per day
+
+- Line chart
+
 ## Infected by age group
 
 - Bar chart
+- Pie chart
 
 ## Infected by region
 
@@ -18,7 +23,7 @@
 
 ## Infected by municipality
 
-- Bar (by region)
+- Bar chart (by region)
 - Map
 
 ## Deaths
