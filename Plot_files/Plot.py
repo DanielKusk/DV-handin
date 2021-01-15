@@ -36,6 +36,6 @@ def cumulated_deaths_line_plot(type):
 
 
 #deaths_line_plot('html')
-#cumulated_deaths_line_plot('html')
-deaths_line_plot('png')
-cumulated_deaths_line_plot('png')
+cumulated_deaths_line_plot('html')
+#deaths_line_plot('png')
+#cumulated_deaths_line_plot('png')

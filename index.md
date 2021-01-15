@@ -1,6 +1,6 @@
 # Visualisation of COVID-19 infections
 
-### Data source: [Statens Serum Institut](https://covid19.ssi.dk/overvagningsdata). Data last updated 30 December 2020.
+### Data source: [Statens Serum Institut](https://covid19.ssi.dk/overvagningsdata). Data last updated 15 January 2021.
 
 ## New infections per day
 
