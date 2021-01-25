@@ -108,7 +108,47 @@ def overall_incidence_map(type):
     else:
         print('Invalid type given')
 
+def cases_line_plot(type):
+    df = pd.read_csv('../Data/SSI/Test_pos_over_time.csv', sep=';', decimal=',', thousands='.')
+    df = df.drop(df[df.Date == 'I alt'].index)
+    df = df.drop(df[df.Date == 'Antal personer'].index)
+    fig = px.line(df, x='Date', y='NewPositive', title='Positive COVID-19 tests per day', labels=dict(NewPositive = 'People tested positive for COVID-19'))
+    if type == 'html':
+        fig.update_xaxes(rangeslider_visible=True)
+        fig.write_html("../Visualisations/cases_line_line_plot.html", config= {'displaylogo': False})
+        #plot(fig, config={'displaylogo': False})
+    elif type == 'png':
+        fig.write_image("../Visualisations/cases_line_plot.png", scale=2)
+    else:
+        print('Invalid type given')
         
+def age_cases_bar_plot(type):
+    df = pd.read_csv('../Data/SSI/Cases_by_age.csv', sep=';', decimal=',', thousands='.')
+    df = df.drop(df[df.Aldersgruppe == 'I alt'].index)
+    fig = px.bar(df, x = 'Aldersgruppe', y='Procent_positive', title='Positivity percentage of COVID-19 by age group', labels=dict(Aldersgruppe = 'Age group', Procent_positive = "Positivity percentage"))
+    if type == 'html':
+        fig.write_html("../Visualisations/age_cases_bar_plot.html", config= {'displaylogo': False})
+        #plot(fig)
+    elif type == 'png':
+        fig.write_image("../Visualisations/age_cases_bar_plot.png", scale=2)
+    else:
+        print('Invalid type given')
+        
+def age_cases_pie_chart(type):
+    df = pd.read_csv('../Data/SSI/Cases_by_age.csv', sep=';', decimal=',', thousands='.')
+    df = df.drop(df[df.Aldersgruppe == 'I alt'].index)
+    fig = px.pie(df, names = 'Aldersgruppe', values ='Procent_positive', title='Positivity percentage of COVID-19 by age group', labels=dict(Aldersgruppe = 'Age group', Procent_positive = "Positivity percentage"))
+    fig.update_traces(textposition='inside', textinfo='percent+label')
+    if type == 'html':
+        fig.write_html("../Visualisations/age_cases_bar_plot.html", config= {'displaylogo': False})
+        plot(fig)
+    elif type == 'png':
+        fig.write_image("../Visualisations/age_cases_bar_plot.png", scale=2)
+    else:
+        print('Invalid type given')      
+
+age_cases_pie_chart('html')
+
 #overall_incidence_map('png')
 
 # def incidence_bar_plot(start_time, end_time, fig_type):
@@ -168,3 +208,5 @@ def update_all():
     overall_incidence_bar_plot('all','png')
     overall_incidence_map('html')
     overall_incidence_map('png')
+    cases_line_plot('html')
+    cases_line_plot('png')

@@ -4,8 +4,7 @@
 
 ## On which days were the least and most people infected? Do the restrictions work? (New infections per day, compare with restriction dates)
 
-- Line chart
-- Bar chart
+- [Line chart](Visualisations/positivity_percentage_line_plot.html)
 
 ## How large a proportion of the tested people are positive? (Positivity percentage per day)
 
@@ -13,8 +12,7 @@
 
 ## Which age groups are susceptible to infection? (Infected by age group)
 
-- Bar chart
-- Pie chart
+- [Bar chart](Visualisations/age_cases_bar_plot.html)
 
 ## Which municipalities are hit the hardest? (Infected by municipality)
 
@@ -26,11 +24,13 @@
 	- [Region Syddanmark](Visualisations/overall_incidence_bar_plot_Syddanmark.html)
 	- [Christiansø (Danish Defence)](Visualisations/overall_incidence_bar_plot_Christiansø.html)
 
-- Map
+- Bar chart (top 10 nationwide)
+
+- [Map](Visualisations/overall_incidence_map.html)
 
 ## Which regions are hit the hardest? (Infected by municipality, agg. by region)
 
-- [Bar chart](Visualisations/verall_incidence_bar_plot_all.html)
+- [Bar chart](Visualisations/overall_incidence_bar_plot_all.html)
 - Map
 
 ## When have the most deaths occured? And how many have died so far? (Deaths)
