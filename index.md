@@ -7,9 +7,9 @@
 - Line chart
 - Bar chart
 
-## How has the positivity percentagr developed? (Positivity percentage per day)
+## How large a proportion of the tested people are positive? (Positivity percentage per day)
 
-- Line chart
+- [Line chart (per day)](Visualisations/positivity_percentage_line_plot.html)
 
 ## Which age groups are susceptible to infection? (Infected by age group)
 
@@ -18,7 +18,14 @@
 
 ## Which municipalities are hit the hardest? (Infected by municipality)
 
-- Bar chart
+- Bar chart (by region)
+-- [Region Hovedstaden](Visualisations/overall_incidence_bar_plot_Hovedstaden.html)
+-- [Region Midtjylland(Visualisations/overall_incidence_bar_plot_Midtjylland.html)
+-- [Region Nordjylland](Visualisations/overall_incidence_bar_plot_Nordjylland.html)
+-- [Region Sjælland](Visualisations/overall_incidence_bar_plot_Sjælland.html)
+-- [Region Syddanmark](Visualisations/overall_incidence_bar_plot_Syddanmark.html)
+-- [Christiansø (Danish Defence)](Visualisations/overall_incidence_bar_plot_Christiansø.html)
+
 - Map
 
 ## Which regions are hit the hardest? (Infected by municipality, agg. by region)
