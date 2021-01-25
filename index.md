@@ -19,12 +19,12 @@
 ## Which municipalities are hit the hardest? (Infected by municipality)
 
 - Bar chart (by region)
--- [Region Hovedstaden](Visualisations/overall_incidence_bar_plot_Hovedstaden.html)
--- [Region Midtjylland(Visualisations/overall_incidence_bar_plot_Midtjylland.html)
--- [Region Nordjylland](Visualisations/overall_incidence_bar_plot_Nordjylland.html)
--- [Region Sjælland](Visualisations/overall_incidence_bar_plot_Sjælland.html)
--- [Region Syddanmark](Visualisations/overall_incidence_bar_plot_Syddanmark.html)
--- [Christiansø (Danish Defence)](Visualisations/overall_incidence_bar_plot_Christiansø.html)
+	- [Region Hovedstaden](Visualisations/overall_incidence_bar_plot_Hovedstaden.html)
+	- [Region Midtjylland(Visualisations/overall_incidence_bar_plot_Midtjylland.html)
+	- [Region Nordjylland](Visualisations/overall_incidence_bar_plot_Nordjylland.html)
+	- [Region Sjælland](Visualisations/overall_incidence_bar_plot_Sjælland.html)
+	- [Region Syddanmark](Visualisations/overall_incidence_bar_plot_Syddanmark.html)
+	- [Christiansø (Danish Defence)](Visualisations/overall_incidence_bar_plot_Christiansø.html)
 
 - Map
 
