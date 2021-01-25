@@ -61,9 +61,20 @@ def overall_incidence_bar_plot(region, type):
     df = pd.read_csv('../Data/SSI/Municipality_test_pos.csv', sep=';', decimal=',', thousands='.')
     df['Region'] = [get_region_by_code(i) for i in df['Kommune_(id)']]
     df.rename(columns={'Kommune_(id)' : 'Municipality id', 'Kommune_(navn)':'Municipality', 'Kumulativ_incidens_(per_100000)' : 'Cumulated incidence'}, inplace=True)
-    df = df.drop(df[df.Region != region].index)
     df = df.sort_values(by = 'Cumulated incidence', ascending = False)
-    fig = px.bar(df, x = 'Municipality', y='Cumulated incidence', title='Cumulated incidence of COVID-19 in Region ' + region + ' per 100 000 inhabitants')
+    if region == 'Christiansø':
+        df = df.drop(df[df.Region != region].index)
+        fig = px.bar(df, x = 'Municipality', y='Cumulated incidence', title='Cumulated incidence of COVID-19 on ' + region + ' per 100 000 inhabitants')
+    elif region in ['Hovedstaden','Midtjylland','Nordjylland','Sjælland','Syddanmark']:
+        df = df.drop(df[df.Region != region].index)
+        fig = px.bar(df, x = 'Municipality', y='Cumulated incidence', title='Cumulated incidence of COVID-19 in Region ' + region + ' per 100 000 inhabitants')
+    elif region == 'all':
+        df_grouped = df.groupby(['Region']).mean()
+        df_grouped['Cumulated incidence'] = [round(i) for i in df_grouped['Cumulated incidence']]
+        df_grouped = df_grouped.sort_values(by = 'Cumulated incidence', ascending = False)
+        fig = px.bar(df_grouped, x=df_grouped.index, y='Cumulated incidence', title ='Cumulated incidence of COVID-19 per 100 000 inhabitants by region', labels={'x':'Region'})
+    else:
+        print('Invalid region given')
     if type == 'html':
         fig.write_html("../Visualisations/overall_incidence_bar_plot_" + region + ".html", config= {'displaylogo': False})
         plot(fig, config={'displaylogo': False})
@@ -98,7 +109,7 @@ def overall_incidence_map(type):
         print('Invalid type given')
 
         
-overall_incidence_map('png')
+#overall_incidence_map('png')
 
 
 # def incidence_bar_plot(start_time, end_time, fig_type):
@@ -120,8 +131,8 @@ overall_incidence_map('png')
 #     print(df_pop)
 
 
-#overall_incidence_bar_plot('Christiansø','html')
-#overall_incidence_bar_plot('Christiansø','png')
+overall_incidence_bar_plot('all','html')
+overall_incidence_bar_plot('all','png')
 
 # incidence_bar_plot('','')
     

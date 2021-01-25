@@ -20,7 +20,7 @@
 
 - Bar chart (by region)
 	- [Region Hovedstaden](Visualisations/overall_incidence_bar_plot_Hovedstaden.html)
-	- [Region Midtjylland(Visualisations/overall_incidence_bar_plot_Midtjylland.html)
+	- [Region Midtjylland](Visualisations/overall_incidence_bar_plot_Midtjylland.html)
 	- [Region Nordjylland](Visualisations/overall_incidence_bar_plot_Nordjylland.html)
 	- [Region Sjælland](Visualisations/overall_incidence_bar_plot_Sjælland.html)
 	- [Region Syddanmark](Visualisations/overall_incidence_bar_plot_Syddanmark.html)
@@ -30,7 +30,7 @@
 
 ## Which regions are hit the hardest? (Infected by municipality, agg. by region)
 
-- Bar chart
+- [Bar chart](Visualisations/verall_incidence_bar_plot_all.html)
 - Map
 
 ## When have the most deaths occured? And how many have died so far? (Deaths)
