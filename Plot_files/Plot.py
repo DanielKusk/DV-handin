@@ -2,10 +2,7 @@
 
 from plotly.offline import plot
 import plotly.express as px
-import plotly.graph_objects as go
 import pandas as pd
-from plotly.subplots import make_subplots
-import json
 import geopandas as gpd
 
 def deaths_line_plot(type):
@@ -134,55 +131,6 @@ def age_cases_bar_plot(type):
     else:
         print('Invalid type given')
         
-def age_cases_pie_chart(type):
-    df = pd.read_csv('../Data/SSI/Cases_by_age.csv', sep=';', decimal=',', thousands='.')
-    df = df.drop(df[df.Aldersgruppe == 'I alt'].index)
-    fig = px.pie(df, names = 'Aldersgruppe', values ='Procent_positive', title='Positivity percentage of COVID-19 by age group', labels=dict(Aldersgruppe = 'Age group', Procent_positive = "Positivity percentage"))
-    fig.update_traces(textposition='inside', textinfo='percent+label')
-    if type == 'html':
-        fig.write_html("../Visualisations/age_cases_bar_plot.html", config= {'displaylogo': False})
-        plot(fig)
-    elif type == 'png':
-        fig.write_image("../Visualisations/age_cases_bar_plot.png", scale=2)
-    else:
-        print('Invalid type given')      
-
-age_cases_pie_chart('html')
-
-#overall_incidence_map('png')
-
-# def incidence_bar_plot(start_time, end_time, fig_type):
-#     df_cases = pd.read_csv('../Data/SSI/Municipality_cases_time_series.csv', sep=';', decimal=',', thousands='.')
-#     df_pop = pd.read_csv('../Data/SSI/Municipality_test_pos.csv', sep=';', decimal=',', thousands='.')
-#     df = pd.DataFrame(dict(date = df_cases.date_sample, cases = df_cases))
-#     print(df)
-    #if time == 'week':'
-    #    
-    #elif time == 'day':
-    #
-    #else:
-        #print('Invalid timeframe given')
-    
-
-# def incidence_map(time, fig_type):
-#     df_cases = pd.read_csv('../Data/SSI/Municipality_cases_time_series.csv', sep=';', decimal=',', thousands='.')
-#     df_pop = pd.read_csv('../Data/SSI/Municipality_test_pos.csv', sep=';', decimal=',', thousands='.')
-#     print(df_pop)
-
-
-# overall_incidence_bar_plot('all','html')
-# overall_incidence_bar_plot('all','png')
-
-# incidence_bar_plot('','')
-    
-#deaths_line_plot('html')
-#cumulated_deaths_line_plot('html')
-#positivity_percentage_line_plot('html')
-
-#deaths_line_plot('png')
-#cumulated_deaths_line_plot('png')
-#positivity_percentage_line_plot('png')
-
 def update_all():
     deaths_line_plot('html')
     deaths_line_plot('png')
