@@ -15,7 +15,7 @@ def deaths_line_plot(type):
     if type == 'html':
         fig.update_xaxes(rangeslider_visible=True)
         fig.write_html("../Visualisations/deaths_line_plot.html", config= {'displaylogo': False})
-        plot(fig, config={'displaylogo': False})
+        #plot(fig, config={'displaylogo': False})
     elif type == 'png':
         fig.write_image("../Visualisations/deaths_line_plot.png", scale=2)
     else:
@@ -29,7 +29,7 @@ def cumulated_deaths_line_plot(type):
     if type == 'html':
         fig.update_xaxes(rangeslider_visible=True)
         fig.write_html("../Visualisations/cumulated_deaths_line_plot.html", config= {'displaylogo': False})
-        plot(fig, config={'displaylogo': False})
+        #plot(fig, config={'displaylogo': False})
     elif type == 'png':
         fig.write_image("../Visualisations/cumulated_deaths_line_plot.png", scale=2)
     else:
@@ -43,7 +43,7 @@ def positivity_percentage_line_plot(type):
     if type == 'html':
         fig.update_xaxes(rangeslider_visible=True)
         fig.write_html("../Visualisations/positivity_percentage_line_plot.html", config= {'displaylogo': False})
-        plot(fig, config={'displaylogo': False})
+        #plot(fig, config={'displaylogo': False})
     elif type == 'png':
         fig.write_image("../Visualisations/positivity_percentage_line_plot.png", scale=2)
     else:
@@ -77,7 +77,7 @@ def overall_incidence_bar_plot(region, type):
         print('Invalid region given')
     if type == 'html':
         fig.write_html("../Visualisations/overall_incidence_bar_plot_" + region + ".html", config= {'displaylogo': False})
-        plot(fig, config={'displaylogo': False})
+        #plot(fig, config={'displaylogo': False})
     elif type == 'png':
         fig.write_image("../Visualisations/overall_incidence_bar_plot_" + region + ".png", scale = 2)
     else:
@@ -102,7 +102,7 @@ def overall_incidence_map(type):
     fig.update_layout(margin={"r":0,"t":50,"l":0,"b":20})
     if type == 'html':
         fig.write_html("../Visualisations/overall_incidence_map.html", config= {'displaylogo': False})
-        plot(fig)
+        #plot(fig)
     elif type == 'png':
         fig.write_image("../Visualisations/overall_incidence_map.png", scale = 2)
     else:
@@ -110,7 +110,6 @@ def overall_incidence_map(type):
 
         
 #overall_incidence_map('png')
-
 
 # def incidence_bar_plot(start_time, end_time, fig_type):
 #     df_cases = pd.read_csv('../Data/SSI/Municipality_cases_time_series.csv', sep=';', decimal=',', thousands='.')
@@ -131,8 +130,8 @@ def overall_incidence_map(type):
 #     print(df_pop)
 
 
-overall_incidence_bar_plot('all','html')
-overall_incidence_bar_plot('all','png')
+# overall_incidence_bar_plot('all','html')
+# overall_incidence_bar_plot('all','png')
 
 # incidence_bar_plot('','')
     
@@ -143,3 +142,29 @@ overall_incidence_bar_plot('all','png')
 #deaths_line_plot('png')
 #cumulated_deaths_line_plot('png')
 #positivity_percentage_line_plot('png')
+
+def update_all():
+    deaths_line_plot('html')
+    deaths_line_plot('png')
+    cumulated_deaths_line_plot('html')
+    cumulated_deaths_line_plot('png')
+    positivity_percentage_line_plot('html')
+    positivity_percentage_line_plot('png')
+    overall_incidence_map('html')
+    overall_incidence_map('png')
+    overall_incidence_bar_plot('Christiansø','html')
+    overall_incidence_bar_plot('Christiansø','png')
+    overall_incidence_bar_plot('Hovedstaden','html')
+    overall_incidence_bar_plot('Hovedstaden','png')
+    overall_incidence_bar_plot('Midtjylland','html')
+    overall_incidence_bar_plot('Midtjylland','png')
+    overall_incidence_bar_plot('Nordjylland','html')
+    overall_incidence_bar_plot('Nordjylland','png')
+    overall_incidence_bar_plot('Sjælland','html')
+    overall_incidence_bar_plot('Sjælland','png')
+    overall_incidence_bar_plot('Syddanmark','html')
+    overall_incidence_bar_plot('Syddanmark','png')
+    overall_incidence_bar_plot('all','html')
+    overall_incidence_bar_plot('all','png')
+    overall_incidence_map('html')
+    overall_incidence_map('png')

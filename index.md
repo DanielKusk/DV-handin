@@ -1,6 +1,6 @@
 # Visualisation of COVID-19 infections
 
-### Data source: [Statens Serum Institut](https://covid19.ssi.dk/overvagningsdata). Data last updated 23 January 2021.
+### Data source: [Statens Serum Institut](https://covid19.ssi.dk/overvagningsdata). Data last updated 25 January 2021.
 
 ## On which days were the least and most people infected? Do the restrictions work? (New infections per day, compare with restriction dates)
 
