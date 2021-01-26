@@ -94,7 +94,7 @@ def overall_incidence_map(type):
     df = gpd.read_file('../Data/Map/kommuner.geojson')
     df['Cumulated incidence'] = [get_incidence_by_code(int(i)) for i in df['KOMKODE']]
     df['Imdeks'] = [i for i in df.index]
-    fig = px.choropleth(df,geojson=df.geometry, color='Cumulated incidence', locations='Imdeks', projection='mercator', hover_data={'Imdeks': False}, hover_name="KOMNAVN", color_continuous_scale = 'Reds', title='Cumulated incidence of COVID-19 by municipality')
+    fig = px.choropleth(df,geojson=df.geometry, color='Cumulated incidence', locations='Imdeks', projection='mercator', hover_data={'Imdeks': False}, hover_name="KOMNAVN", color_continuous_scale = 'Reds', title='Cumulated incidence of COVID-19 per 100 000 inhabitants by municipality')
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(margin={"r":0,"t":50,"l":0,"b":20})
     if type == 'html':
@@ -160,3 +160,5 @@ def update_all():
     cases_line_plot('png')
     age_cases_bar_plot('html')
     age_cases_bar_plot('png')
+    
+update_all()

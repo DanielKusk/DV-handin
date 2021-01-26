@@ -4,7 +4,7 @@
 
 ## On which days were the least and most people infected? Do the restrictions work? (New infections per day, compare with restriction dates)
 
-- [Line chart](Visualisations/positivity_percentage_line_plot.html)
+- [Line chart](Visualisations/cases_line_plot.html)
 
 ## How large a proportion of the tested people are positive? (Positivity percentage per day)
 
