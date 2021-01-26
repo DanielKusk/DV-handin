@@ -158,3 +158,5 @@ def update_all():
     overall_incidence_map('png')
     cases_line_plot('html')
     cases_line_plot('png')
+    age_cases_bar_plot('html')
+    age_cases_bar_plot('png')
