@@ -112,7 +112,7 @@ def cases_line_plot(type):
     fig = px.line(df, x='Date', y='NewPositive', title='Positive COVID-19 tests per day', labels=dict(NewPositive = 'People tested positive for COVID-19'))
     if type == 'html':
         fig.update_xaxes(rangeslider_visible=True)
-        fig.write_html("../Visualisations/cases_line_line_plot.html", config= {'displaylogo': False})
+        fig.write_html("../Visualisations/cases_line_plot.html", config= {'displaylogo': False})
         #plot(fig, config={'displaylogo': False})
     elif type == 'png':
         fig.write_image("../Visualisations/cases_line_plot.png", scale=2)
