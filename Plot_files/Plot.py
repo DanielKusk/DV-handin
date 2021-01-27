@@ -2,8 +2,10 @@
 
 from plotly.offline import plot
 import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 import geopandas as gpd
+from plotly.subplots import make_subplots
 
 def deaths_line_plot(type):
     df = pd.read_csv('../Data/SSI/deaths_over_time.csv', sep=';')
@@ -18,6 +20,30 @@ def deaths_line_plot(type):
     else:
         print('Invalid type given')
         
+        
+def death_and_cases_combo_plot(type):
+    df_death = pd.read_csv('../Data/SSI/deaths_over_time.csv', sep=';')
+    df_death = df_death.drop(df_death[df_death.Dato == 'I alt'].index)
+        
+    df_death.rename(columns = {'Dato' : 'Date'}, inplace = True)
+    df_cases = pd.read_csv('../Data/SSI/Test_pos_over_time.csv', sep=';', decimal=',', thousands='.')
+    df_cases = df_cases.drop(df_cases[df_cases.Date == 'I alt'].index)
+    df_cases = df_cases.drop(df_cases[df_cases.Date == 'Antal personer'].index)
+    df = df_death.merge(df_cases.set_index('Date'), how='right', on='Date')
+    df = df.fillna(0)
+    fig = make_subplots(2, 1, shared_xaxes=True)
+    fig.add_trace(go.Scatter(x=df['Date'], y=df.Antal_døde, mode='lines', name='Deaths'), 1,1)
+    fig.add_trace(go.Scatter(x=df['Date'], y=df.NewPositive, mode='lines', name='New infections'), 2,1)
+    fig.update_layout(title='New infections and deaths related to COVID-19 per day')
+    if type == 'html':
+        fig.write_html("../Visualisations/death_and_cases_combo_plot.html", config= {'displaylogo': False})
+        plot(fig, config={'displaylogo': False})
+    elif type == 'png':
+        fig.write_image("../Visualisations/death_and_cases_combo_plot.png", scale=2)
+    else:
+        print('Invalid type given')
+    
+    
 def cumulated_deaths_line_plot(type):
     df = pd.read_csv('../Data/SSI/deaths_over_time.csv', sep=';')
     df = df.drop(df[df.Dato == 'I alt'].index)
@@ -136,6 +162,8 @@ def update_all():
     deaths_line_plot('png')
     cumulated_deaths_line_plot('html')
     cumulated_deaths_line_plot('png')
+    death_and_cases_combo_plot('html')
+    death_and_cases_combo_plot('png')
     positivity_percentage_line_plot('html')
     positivity_percentage_line_plot('png')
     overall_incidence_map('html')
