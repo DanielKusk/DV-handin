@@ -37,7 +37,7 @@ def death_and_cases_combo_plot(type):
     fig.update_layout(title='New infections and deaths related to COVID-19 per day')
     if type == 'html':
         fig.write_html("../Visualisations/death_and_cases_combo_plot.html", config= {'displaylogo': False})
-        plot(fig, config={'displaylogo': False})
+        #plot(fig, config={'displaylogo': False})
     elif type == 'png':
         fig.write_image("../Visualisations/death_and_cases_combo_plot.png", scale=2)
     else:
